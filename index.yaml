@@ -1,0 +1,14 @@
+apiVersion: v1
+entries:
+  beemoviebot:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2023-02-09T05:01:37.974089275Z"
+    description: A Helm chart for Kubernetes
+    digest: db4d8cbc3eb1337a3b8ca50cf092cd8eb474f19db0349b388529ee1aaa501a1c
+    name: beemoviebot
+    type: application
+    urls:
+    - https://imlogang.github.io/beemovie-bot-helm/beemoviebot-0.1.0.tgz
+    version: 0.1.0
+generated: "2023-02-09T05:01:37.972844716Z"
