@@ -27,11 +27,10 @@ podAnnotations:
   selector:
     matchLabels:
       app: beemoviebot-app
-  template:
-    metadata:
-      labels:
-        app: example-deployment
-        version: 0.3.0
+  metadata:
+    labels:
+      app: beemoviebot-app
+      version: 0.3.0
   annotations:
     circleci.com/project-id: c85c7f33-8a31-48ba-b257-ad10f26d106d
     circleci.com/helm-revision-number: "{{ .Release.Revision | quote }}"
