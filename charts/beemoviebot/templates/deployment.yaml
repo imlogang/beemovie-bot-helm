@@ -3,14 +3,15 @@ kind: Deployment
 metadata:
   name: {{ include "beemoviebot.fullname" . }}
   labels:
-    {{- include "beemoviebot.labels" . | nindent 4 }}
+    app: beemoviebot-app
+    version: 0.3.0
 spec:
   {{- if not .Values.autoscaling.enabled }}
   replicas: {{ .Values.replicaCount }}
   {{- end }}
   selector:
     matchLabels:
-      {{- include "beemoviebot.selectorLabels" . | nindent 6 }}
+      app: beemoviebot-app
   template:
     metadata:
       {{- with .Values.podAnnotations }}
