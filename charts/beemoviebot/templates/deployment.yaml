@@ -4,7 +4,7 @@ metadata:
   name: {{ include "beemoviebot.fullname" . }}
   labels:
     app: beemoviebot-chart
-    version: 0.3.0
+    version: {{ .Values.circleTag }}
   annotations:
     circleci.com/project-id: c85c7f33-8a31-48ba-b257-ad10f26d106d
     circleci.com/helm-revision-number: {{ .Release.Revision | quote }}
@@ -26,7 +26,7 @@ spec:
       {{- end }}
       labels:
         app: beemoviebot-chart
-        version: 0.3.0
+        version: {{ .Values.circleTag }}
     spec:
       {{- with .Values.imagePullSecrets }}
       imagePullSecrets:
