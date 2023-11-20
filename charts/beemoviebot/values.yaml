@@ -2,6 +2,11 @@
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
+pipelineId: "<<pipeline_id>>"
+workflowId: "<<workflow_id>>"
+projectId: "<<project_id>>"
+jobNumber: "<<job_number>>"
+
 replicaCount: 1
 
 image:
@@ -23,9 +28,7 @@ serviceAccount:
   # If not set and create is true, a name is generated using the fullname template
   name: ""
 
-podAnnotations: 
-  circleci.com/project-id: c85c7f33-8a31-48ba-b257-ad10f26d106d
-  circleci.com/helm-revision-number: "{{ .Release.Revision | quote }}"
+podAnnotations: {}
 
 podSecurityContext: {}
   # fsGroup: 2000
