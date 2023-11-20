@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: {{ include "beemoviebot.fullname" . }}
   labels:
-    app: beemoviebot-app
+    app: beemoviebot-chart
     version: 0.3.0
 spec:
   {{- if not .Values.autoscaling.enabled }}
@@ -11,7 +11,7 @@ spec:
   {{- end }}
   selector:
     matchLabels:
-      app: beemoviebot-app
+      app: beemoviebot-chart
   template:
     metadata:
       {{- with .Values.podAnnotations }}
