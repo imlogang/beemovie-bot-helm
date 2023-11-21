@@ -6,7 +6,7 @@ metadata:
     app: beemoviebot-chart
     version: {{ .Values.image.tag }}
   annotations:
-    circleci.com/project-id: c85c7f33-8a31-48ba-b257-ad10f26d106d
+    circleci.com/project-id: {{ .Values.project_id }}
     circleci.com/helm-revision-number: {{ .Release.Revision | quote }}
     circleci.com/pipeline-id: {{ .Values.pipelineId }}
     circleci.com/workflow-id: {{ .Values.workflowId }}
