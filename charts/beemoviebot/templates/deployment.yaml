@@ -4,13 +4,15 @@ metadata:
   name: {{ include "beemoviebot.fullname" . }}
   labels:
     app: beemoviebot-chart
-    version: 0.3.0
+    version: {{ .Values.image.tag }}
   annotations:
     circleci.com/project-id: c85c7f33-8a31-48ba-b257-ad10f26d106d
     circleci.com/helm-revision-number: {{ .Release.Revision | quote }}
     circleci.com/pipeline-id: {{ .Values.pipelineId }}
     circleci.com/workflow-id: {{ .Values.workflowId }}
     circleci.com/job-number: {{ .Values.jobNumber }}
+    # The above 3 do not work. Need to figure out how to get those dynamically.
+    # Look into how on-prem got them as annotations 
 spec:
   {{- if not .Values.autoscaling.enabled }}
   replicas: {{ .Values.replicaCount }}
@@ -26,7 +28,7 @@ spec:
       {{- end }}
       labels:
         app: beemoviebot-chart
-        version: 0.3.0
+        version: {{ .Values.image.tag }}
     spec:
       {{- with .Values.imagePullSecrets }}
       imagePullSecrets:
