@@ -6,11 +6,11 @@ metadata:
     app: beemoviebot-chart
     version: {{ .Values.image.tag }}
   annotations:
-    circleci.com/project-id: {{ .Values.project_id }}
+    circleci.com/project-id: {{ .Values.circleci.project_id }}
     circleci.com/helm-revision-number: {{ .Release.Revision | quote }}
-    circleci.com/pipeline-id: {{ .Values.pipelineId }}
-    circleci.com/workflow-id: {{ .Values.workflowId }}
-    circleci.com/job-number: {{ .Values.jobNumber }}
+    circleci.com/pipeline-id: {{ .Values.circleci.pipelineId }}
+    circleci.com/workflow-id: {{ .Values.circleci.workflowId }}
+    circleci.com/job-number: {{ .Values.circleci.jobNumber }}
     # The above 3 do not work. Need to figure out how to get those dynamically.
     # Look into how on-prem got them as annotations 
 spec:
