@@ -11,6 +11,12 @@ metadata:
     circleci.com/pipeline-id: {{ .Values.circleci.pipelineId | quote }}
     circleci.com/workflow-id: {{ .Values.circleci.workflowId | quote }}
     circleci.com/job-number: {{ .Values.circleci.jobNumber | quote }}
+    circleci.com/restore-version-enabled: {{ .Values.circleci.restore-version-enabled | quote }}
+    circleci.com/scale-component-enabled: {{ .Values.circleci.scale-component-enabled | quote }}
+    circleci.com/restart-component-enabled: {{ .Values.circleci.restart-component-enabled | quote }}
+    circleci.com/retry-release-enabled: {{ .Values.circleci.retry-release-enabled | quote }}
+    circleci.com/promote-release-enabled: {{ .Values.circleci.promote-release-enabled | quote }}
+    circleci.com/cancel-release-enabled: {{ .Values.circleci.cancel-release-enabled | quote }}
     # The above 3 do not work. Need to figure out how to get those dynamically.
     # Look into how on-prem got them as annotations 
 spec:
