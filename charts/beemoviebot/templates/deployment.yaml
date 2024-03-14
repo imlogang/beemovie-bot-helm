@@ -11,12 +11,12 @@ metadata:
     circleci.com/pipeline-id: {{ .Values.circleci.pipelineId | quote }}
     circleci.com/workflow-id: {{ .Values.circleci.workflowId | quote }}
     circleci.com/job-number: {{ .Values.circleci.jobNumber | quote }}
-    circleci.com/restore-version-enabled: {{ .Values.circleci.restoreversionenabled }}
-    circleci.com/scale-component-enabled: {{ .Values.circleci.scalecomponentenabled }}
-    circleci.com/restart-component-enabled: {{ .Values.circleci.restartcomponentenabled }}
-    circleci.com/retry-release-enabled: {{ .Values.circleci.retryreleaseenabled }}
-    circleci.com/promote-release-enabled: {{ .Values.circleci.promotereleaseenabled }}
-    circleci.com/cancel-release-enabled: {{ .Values.circleci.cancelreleaseenabled }}
+    circleci.com/restore-version-enabled: {{ .Values.circleci.restoreversionenabled | quote }}
+    circleci.com/scale-component-enabled: {{ .Values.circleci.scalecomponentenabled | quote }}
+    circleci.com/restart-component-enabled: {{ .Values.circleci.restartcomponentenabled | quote }}
+    circleci.com/retry-release-enabled: {{ .Values.circleci.retryreleaseenabled | quote }}
+    circleci.com/promote-release-enabled: {{ .Values.circleci.promotereleaseenabled | quote }}
+    circleci.com/cancel-release-enabled: {{ .Values.circleci.cancelreleaseenabled | quote }}
     # The above 3 do not work. Need to figure out how to get those dynamically.
     # Look into how on-prem got them as annotations 
 spec:

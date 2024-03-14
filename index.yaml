@@ -9,6 +9,6 @@ entries:
     name: beemoviebot
     type: application
     urls:
-    - https://imlogang.github.io/beemovie-bot-helm/beemoviebot-0.9.1.tgz
-    version: 0.9.1
+    - https://imlogang.github.io/beemovie-bot-helm/beemoviebot-0.9.2.tgz
+    version: 0.9.2
 generated: "2023-04-07T22:41:25.6577438-05:00"
