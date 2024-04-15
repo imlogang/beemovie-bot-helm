@@ -6,6 +6,7 @@ pipelineId: ""
 workflowId: ""
 jobNumber: ""
 project_id: ""
+secretName: ""
 
 replicaCount: 1
 

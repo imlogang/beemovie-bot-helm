@@ -53,17 +53,17 @@ spec:
             - name: CLIENT_ID
               valueFrom:
                 secretKeyRef:
-                  name: production-secrets
+                  name: {{ .Values.secretName }}
                   key: CLIENT_ID
             - name: BEEMOVIEBOT
               valueFrom:
                 secretKeyRef:
-                  name: production-secrets
+                  name: {{ .Values.secretName }}
                   key: BEEMOVIEBOT
             - name: PteroToken
               valueFrom:
                 secretKeyRef:
-                  name: production-secrets
+                  name: {{ .Values.secretName }}
                   key: PteroToken      
           ports:
             - name: http
