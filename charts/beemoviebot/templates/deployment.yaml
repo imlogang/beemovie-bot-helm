@@ -65,7 +65,12 @@ spec:
               valueFrom:
                 secretKeyRef:
                   name: {{ .Values.secretName }}
-                  key: PteroToken      
+                  key: PteroToken   
+            - name: CIRCLE_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  name: {{ .Values.secretName }}
+                  key: CIRCLE_TOKEN    
           ports:
             - name: http
               containerPort: 80
