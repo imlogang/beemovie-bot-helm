@@ -29,7 +29,6 @@ spec:
   selector:
     matchLabels:
       app: beemoviebot-chart
-      circleci.com/component-name: "beemoviebot-chart"
   template:
     metadata:
       {{- with .Values.podAnnotations }}
