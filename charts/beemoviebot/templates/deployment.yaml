@@ -11,6 +11,8 @@ metadata:
     circleci.com/pipeline-id: {{ .Values.circleci.pipelineId | quote }}
     circleci.com/workflow-id: {{ .Values.circleci.workflowId | quote }}
     circleci.com/job-number: {{ .Values.circleci.jobNumber | quote }}
+    circleci.com/component-name: "beemoviebot-chart"
+    circleci.com/version: {{ .Values.image.tag | quote }}
     circleci.com/restore-version-enabled: {{ .Values.circleci.restoreversionenabled | quote }}
     circleci.com/scale-component-enabled: {{ .Values.circleci.scalecomponentenabled | quote }}
     circleci.com/restart-component-enabled: {{ .Values.circleci.restartcomponentenabled | quote }}
@@ -27,6 +29,7 @@ spec:
   selector:
     matchLabels:
       app: beemoviebot-chart
+      circleci.com/component-name: "beemoviebot-chart"
   template:
     metadata:
       {{- with .Values.podAnnotations }}
@@ -36,6 +39,8 @@ spec:
       labels:
         app: beemoviebot-chart
         version: {{ .Values.image.tag }}
+        circleci.com/component-name: "beemoviebot-chart"
+        circleci.com/version: {{ .Values.image.tag | quote }}
     spec:
       {{- with .Values.imagePullSecrets }}
       imagePullSecrets:
